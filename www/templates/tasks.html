@@ -1,0 +1,18 @@
+<ion-view view-title="Todo">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon" ui-sref="create">
+            <i class="icon ion-compose"></i>
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <!-- our list and list items -->
+        <ion-list>
+            <ion-item ng-repeat="task in tasks" class="item-remove-animate">
+                <div ng-style="{'text-decoration':getstyle(task)}">
+                    {{task.title}}
+                </div>
+                <ion-option-button class="button-positive" ng-click="complete(task, $index)">Complete</ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
